@@ -1,31 +1,45 @@
-﻿@{
+﻿@model IEnumerable<Bites3.Models.GameListViewModel>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
+
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>BITS AND BYTES</h1>
+    <p class="lead">Bits and Bytes is a videogames database with social features such a reviews, articles and forums</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h3>Games</h3>
+        <form method="get">
+            <input class="form-control" type="search" name="searchTerm" />
+            <input class="btn" type="submit" value="Search by Name" />
+        </form>
+
+
+        @foreach (var item in Model)
+        {
+            <div>
+                <h4>@item.Name</h4>
+                <div>@item.Format, @item.Publisher</div>
+                <div>
+                    Reviews: @item.CountOfReviews
+                </div>
+                <hr />
+            </div>
+        }
+
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Reviews</h2>
+        <p>Feel free to browse or add to our reviews. Select the Games section above</p>
+        
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Discussions</h2>
+        <p>Feel free to browse or add to our reviews. Select the Discussion section above</p>
+   
     </div>
 </div>
