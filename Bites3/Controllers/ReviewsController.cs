@@ -91,7 +91,7 @@ namespace Bites3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Review review)
+        public ActionResult Edit([Bind(Exclude="ReviewerName")]Review review)
         {
             if (ModelState.IsValid)
             {
