@@ -16,6 +16,7 @@ namespace Bites3.Models
 
         [Required]
         [StringLength(30)]
+        [Display(Name ="Poster Name")]
         public string PosterName { get; set; }
 
 

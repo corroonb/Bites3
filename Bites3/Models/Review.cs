@@ -15,6 +15,7 @@ namespace Bites3.Models
         public string Body { get; set; }
 
         [Required]
+        [Display(Name = "Reviewer Name")]
         public string ReviewerName { get; set; }
 
         

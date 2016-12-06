@@ -25,11 +25,11 @@ namespace Bites3.Controllers
             return HttpNotFound();
         }
 
-        // GET: Reviews
-        //public ActionResult Index()
-        //{
-        //    return View(db.Reviews.ToList());
-        //}
+        //GET: Reviews
+        public ActionResult Index2()
+        {
+            return View(_db.Reviews.ToList());
+        }
 
         // GET: Reviews/Details/5
         public ActionResult Details(int? id)

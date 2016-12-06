@@ -26,10 +26,10 @@ namespace Bites3.Controllers
         }
 
         // GET: Discussions
-        //public ActionResult Index()
-        //{
-        //    return View(db.Discussions.ToList());
-        //}
+        public ActionResult Index2()
+        {
+            return View(_db.Discussions.ToList());
+        }
 
         // GET: Discussions/Details/5
         public ActionResult Details(int? id)
